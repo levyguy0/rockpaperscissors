@@ -5,6 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function getComputerChoice() {
+            let array = ["rock", "paper", "scissors"];
+            let random = array[Math.floor(Math.random()*array.length)];
+            return random
+        }
+
+        let playerSelection = prompt("Choose rock, paper or scissors.")
+        function round() {
+            playerSelection.toLowerCase()
+            if (playerSelection == "rock" && random == "scissors" || playerSelection == "scissors" && random == "paper" || playerSelection == "paper" && random == "rock"){
+                return("You win!" + playerSelection + "beats" + random + "!")
+            }
+            else if(random == "rock" && playerSelection == "scissors" || random == "scissors" && playerSelection == "paper" || random == "paper" && playerSelection == "rock") {
+                return("You lose!" + random + "beats" + playerSelection + "!")
+            }
+            else{
+                return("It's a draw!")
+            }
+        }
+
+
+    </script>
 </head>
 <body>
     

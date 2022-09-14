@@ -6,40 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        let array = ["rock", "paper", "scissors"];
         let random = array[Math.floor(Math.random()*array.length)];
         function getComputerChoice() {
-            let array = ["rock", "paper", "scissors"];
-            return random
+           return random
         }
 
-        
 
-        
         function round() {
             let playerSelection = prompt("Choose rock, paper or scissors.")
-            playerSelection = playerSelection.toLowerCase()
-            getComputerChoice(); 
+            playerSelection.toLowerCase()
+            random = random.toLowerCase()
             if (playerSelection == "rock" && random == "scissors" || playerSelection == "scissors" && random == "paper" || playerSelection == "paper" && random == "rock"){
-                console.log("You win!" + playerSelection + "beats" + random + "!")
+                playerSelection = playerSelection.toUpperCase()
+                random = random.toUpperCase()
+                return("You win!" + " " + playerSelection + " beats" +" " + random + "!")
             }
             else if(random == "rock" && playerSelection == "scissors" || random == "scissors" && playerSelection == "paper" || random == "paper" && playerSelection == "rock") {
-                console.log("You lose!" + random + "beats" + playerSelection + "!")
+                playerSelection = playerSelection.toUpperCase()
+                random = random.toUpperCase()
+                return("You lose!" + " " + random + " beats" +" " + playerSelection + "!")
             }
-            else{
-                console.log("It's a draw!")
+            else if(random == playerSelection){
+                return("It's a draw!")
+            }
+            else {
+                return("Not an option!")
             }
         }
 
-        function game(){
+        function game() {
             for (let i = 0; i < 5; i++) {
-                round();
+                console.log(round());     
 }
         }
-
-        game();
     </script>
 </head>
 <body>
-    
+
 </body>
 </html>

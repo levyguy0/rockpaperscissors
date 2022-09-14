@@ -6,27 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        let random = array[Math.floor(Math.random()*array.length)];
         function getComputerChoice() {
             let array = ["rock", "paper", "scissors"];
-            let random = array[Math.floor(Math.random()*array.length)];
             return random
         }
 
-        let playerSelection = prompt("Choose rock, paper or scissors.")
+        
+
+        
         function round() {
-            playerSelection.toLowerCase()
+            let playerSelection = prompt("Choose rock, paper or scissors.")
+            playerSelection = playerSelection.toLowerCase()
+            getComputerChoice(); 
             if (playerSelection == "rock" && random == "scissors" || playerSelection == "scissors" && random == "paper" || playerSelection == "paper" && random == "rock"){
-                return("You win!" + playerSelection + "beats" + random + "!")
+                console.log("You win!" + playerSelection + "beats" + random + "!")
             }
             else if(random == "rock" && playerSelection == "scissors" || random == "scissors" && playerSelection == "paper" || random == "paper" && playerSelection == "rock") {
-                return("You lose!" + random + "beats" + playerSelection + "!")
+                console.log("You lose!" + random + "beats" + playerSelection + "!")
             }
             else{
-                return("It's a draw!")
+                console.log("It's a draw!")
             }
         }
 
+        function game(){
+            for (let i = 0; i < 5; i++) {
+                round();
+}
+        }
 
+        game();
     </script>
 </head>
 <body>

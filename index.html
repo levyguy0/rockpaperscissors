@@ -7,7 +7,6 @@
     <title>Document</title>
     <script>
         let array = ["rock", "paper", "scissors"];
-        let random = array[Math.floor(Math.random()*array.length)];
         function getComputerChoice() {
            return random
         }
@@ -15,6 +14,7 @@
 
         function round() {
             let playerSelection = prompt("Choose rock, paper or scissors.")
+            let random = array[Math.floor(Math.random()*array.length)];
             playerSelection.toLowerCase()
             random = random.toLowerCase()
             if (playerSelection == "rock" && random == "scissors" || playerSelection == "scissors" && random == "paper" || playerSelection == "paper" && random == "rock"){

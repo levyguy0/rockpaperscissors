@@ -12,51 +12,8 @@
     <button id = 'paper2'>Paper</button>
     <button id = 'scissors2'>Scissors</button>
 
-<script> 
-    let array = ["rock", "paper", "scissors"];
-        function getComputerChoice() {
-           return random
-        }
-    const rockchoice = document.querySelector('#rock2');
-    const paperchoice = document.querySelector('#paper2');
-    const scissorschoice = document.querySelector('#scissors2');
-        
-        rock2.addEventListener('click', () => {
-            console.log(round('rock'))
-        })
-
-        paper2.addEventListener('click', () => {
-            console.log(round('paper'))
-        })
-
-        scissors2.addEventListener('click', () => {
-            console.log(round('scissors'))
-        })
-        function round(playerSelection) {
-            let random = array[Math.floor(Math.random()*array.length)];
-            random = random.toLowerCase()
-            
-            if (playerSelection == "rock" && random == "scissors" || playerSelection == "scissors" && random == "paper" || playerSelection == "paper" && random == "rock"){
-                playerSelection = playerSelection.toUpperCase()
-                random = random.toUpperCase()
-                return("You win!" + " " + playerSelection + " beats" +" " + random + "!")
-                
-            }
-            else if(random == "rock" && playerSelection == "scissors" || random == "scissors" && playerSelection == "paper" || random == "paper" && playerSelection == "rock") {
-                playerSelection = playerSelection.toUpperCase()
-                random = random.toUpperCase()
-                return("You lose!" + " " + random + " beats" +" " + playerSelection + "!")
-            }
-            else if(random == playerSelection){
-                return("It's a draw!")
-            }
-            else {
-                return("Not an option!")
-            }
-        }
-   
-
-
-</script>
+    <div class = playerScores></div>
+    <div class = computerScores></div>
+<script src="../Rock-Paper-Scissors/java.js" defer></script> 
 </body>
 </html>

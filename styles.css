@@ -1,0 +1,70 @@
+.choices {
+  display:flex;
+  gap:150px;
+  position:fixed;
+  left:350px;
+  top:225px;
+  margin-top:150px;
+}
+
+#rock2 {
+    background-image:url("../Rock-Paper-Scissors/img/rock.png");
+   width:150px;
+   height:109px;
+
+}
+
+#paper2 {
+    background-image:url("img/plane.png");
+    width:150px;
+    height:109px;
+}
+
+#scissors2 { 
+    background-image:url("img/imageedit_1_2996310910.png");
+    width:150px;
+    height:109px;
+}
+
+.welcome {
+    display:Flex;
+    justify-content:center;
+    position:relative;
+    top:150px;
+
+}
+
+.inst {
+    display:flex;
+    justify-content:center;
+    position:relative;
+    top:200px;
+}
+
+#result {
+    display:flex;
+    justify-content:center;
+    position:fixed;
+    margin-left:600px;
+    margin-top:280px;
+    text-align:center;
+    
+
+}
+
+#playerScores {
+    display:flex;
+    justify-content:center;
+    position:relative;
+    top:420px;
+    font-size:100px;
+    text-align:center;
+    
+    
+}
+
+#endgame {
+    display:flex;
+    justify-content:center;
+    margin-top:280px;
+}

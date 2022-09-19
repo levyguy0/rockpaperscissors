@@ -32,11 +32,12 @@ let computerScore = document.querySelector('.computerScores')
     function round(playerSelection) {
         let random = array[Math.floor(Math.random()*array.length)];
         random = random.toLowerCase()
+        document.getElementById("endgame").textContent = " " 
         
         if (playerSelection == "rock" && random == "scissors" || playerSelection == "scissors" && random == "paper" || playerSelection == "paper" && random == "rock"){
             playerSelection = playerSelection.toUpperCase()
             random = random.toUpperCase()
-            document.getElementById("result").textContent = "You win!" + " " + playerSelection + " beats" +" " + random + "!"
+            document.getElementById("result").textContent = `${playerSelection} vs ${random}: You win!`
             user++
             document.getElementById("playerScores").textContent =`${user}:${cpu}`;
             
@@ -46,14 +47,16 @@ let computerScore = document.querySelector('.computerScores')
         else if(random == "rock" && playerSelection == "scissors" || random == "scissors" && playerSelection == "paper" || random == "paper" && playerSelection == "rock") {
             playerSelection = playerSelection.toUpperCase()
             random = random.toUpperCase()
-            document.getElementById("result").textContent = "You lose!" + " " + playerSelection + " beats" +" " + random + "!"
+            document.getElementById("result").textContent = `${playerSelection} vs ${random}: You lose!`
             cpu++
             document.getElementById("playerScores").textContent =`${user}:${cpu}`;
             
             
         }
         else if(random == playerSelection){
-            document.getElementById("result").textContent = "It's a draw!"
+            playerSelection = playerSelection.toUpperCase()
+            random = random.toUpperCase()
+            document.getElementById("result").textContent = `${playerSelection} vs ${random}: It's a draw!`
         }
         else {
             return("Not an option!")
@@ -64,6 +67,7 @@ let computerScore = document.querySelector('.computerScores')
             cpu = 0
             document.getElementById("playerScores").textContent =`${user}:${cpu}`;
             document.getElementById("result").textContent = " "
+            
         }
     
         else if(cpu == 5){

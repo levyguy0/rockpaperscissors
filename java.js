@@ -11,9 +11,12 @@ const paperchoice = document.querySelector('#paper2');
 const scissorschoice = document.querySelector('#scissors2');
 let playerScore = document.querySelector('.playerScores')
 let computerScore = document.querySelector('.computerScores')
-    
+
+
+   
     rock2.addEventListener('click', () => {
         console.log(round('rock'))
+        
     })
 
     paper2.addEventListener('click', () => {
@@ -23,6 +26,9 @@ let computerScore = document.querySelector('.computerScores')
     scissors2.addEventListener('click', () => {
         console.log(round('scissors'))
     })
+   
+   
+   
     function round(playerSelection) {
         let random = array[Math.floor(Math.random()*array.length)];
         random = random.toLowerCase()
@@ -30,9 +36,9 @@ let computerScore = document.querySelector('.computerScores')
         if (playerSelection == "rock" && random == "scissors" || playerSelection == "scissors" && random == "paper" || playerSelection == "paper" && random == "rock"){
             playerSelection = playerSelection.toUpperCase()
             random = random.toUpperCase()
-            console.log("You win!" + " " + playerSelection + " beats" +" " + random + "!")
+            document.getElementById("result").textContent = "You win!" + " " + playerSelection + " beats" +" " + random + "!"
             user++
-            console.log(`${user}:${cpu}`)
+            document.getElementById("playerScores").textContent =`${user}:${cpu}`;
             
             
             
@@ -40,16 +46,34 @@ let computerScore = document.querySelector('.computerScores')
         else if(random == "rock" && playerSelection == "scissors" || random == "scissors" && playerSelection == "paper" || random == "paper" && playerSelection == "rock") {
             playerSelection = playerSelection.toUpperCase()
             random = random.toUpperCase()
-            console.log("You lose!" + " " + random + " beats" +" " + playerSelection + "!")
+            document.getElementById("result").textContent = "You lose!" + " " + playerSelection + " beats" +" " + random + "!"
             cpu++
-            console.log(`${user}:${cpu}`)
+            document.getElementById("playerScores").textContent =`${user}:${cpu}`;
             
             
         }
         else if(random == playerSelection){
-            return("It's a draw!")
+            document.getElementById("result").textContent = "It's a draw!"
         }
         else {
             return("Not an option!")
         }
+        if(user == 5){
+            document.getElementById("endgame").textContent = "Game over! You win!" 
+            user = 0
+            cpu = 0
+            document.getElementById("playerScores").textContent =`${user}:${cpu}`;
+            document.getElementById("result").textContent = " "
+        }
+    
+        else if(cpu == 5){
+            document.getElementById("endgame").textContent = "Game over! You lose!" 
+            user = 0
+            cpu = 0
+            document.getElementById("playerScores").textContent =`${user}:${cpu}`;
+            document.getElementById("result").textContent = " "
+        }
     }
+
+
+    
